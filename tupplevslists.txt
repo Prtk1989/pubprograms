@@ -1,0 +1,11 @@
+#!/usr/bin/python
+b = ['a','b']
+l = []
+i = 0 
+while i < 4:
+    try :
+        l.append(input("enter numbers one by one: "))
+        i = i+1
+    except NameError :
+        print "enter integers only"
+    print l

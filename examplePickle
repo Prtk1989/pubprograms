@@ -1,0 +1,30 @@
+(dp0
+S'Jagdish'
+p1
+(dp2
+S'pay'
+p3
+I50000
+sS'age'
+p4
+I50
+sS'name'
+p5
+S'Jagdish Pathak'
+p6
+sS'key'
+p7
+g1
+ssS'Omkar'
+p8
+(dp9
+g3
+I40000
+sg4
+I21
+sg5
+S'Omkar Pathak'
+p10
+sg7
+g8
+ss.

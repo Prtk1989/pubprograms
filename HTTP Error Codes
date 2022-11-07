@@ -1,0 +1,74 @@
+
+2xx ---- Success
+
+200 OK, should include a response body
+
+201 CREATED , URI is returned in the response
+
+202 ACCEPTED , taking time to create a resource, alternate to 201, should point to status monitor for the job or estimated time
+
+204 NO CONTENT, Must not include a response body. it is usually sent as response for PUT POST DELETE, can also come in GET when no response can be sent back in GET about the resource but it exists.
+
+3xx ---- Redirection
+
+
+304 This status code is similar to 204 (“No Content”) in that the response body must be empty. The critical distinction is that 204 is used when there is nothing to send in the body, whereas 304 is used when the resource has not been modified since the version specified by the request headers If-Modified-Since or If-None-Match.
+
+307 TEMPORARY REDIRECT to another host may be
+
+308 PERMANENT REDIRECT
+
+
+
+4xx ----- Client Error
+
+400 BAD REQUEST , 400 is the generic client-side error status, used when no other 4xx error code is appropriate. Errors can be like malformed request syntax, invalid request message parameters, or deceptive request routing etc. The client SHOULD NOT repeat the request without modifications.
+
+401 UNAUTHORIZED , Send correct credentials in authorization header
+
+403 FORBIDDEN , request is correct but user doesn't have the permission to access this resource
+
+404 NOT FOUND , Resource on which operation was supposed to happen doesn't exist right now (can happen in future), 410 is used when its permanently unavailable
+
+405 METHOD NOT ALLOWED , this method used is not allowed on the resource mentioned in the request (ex. a read only resource will not allow PUT or DELETE), response should tell which methods are allowed for this resource, ex. GET, POST in this case
+
+406 NOT ACCEPTABLE, The 406 error response indicates that the API is not able to generate any of the client’s preferred media types, as indicated by the Accept request header. For example, a client request for data formatted as application/xml will receive a 406 response if the API is only willing to format data as application/json.
+
+407 PROXY AUTHENTICATION REQUIRED, client must authenticate itself first with proxy to perform this
+
+408 REQUEST TIMEOUT
+
+409 The request could not be completed due to a conflict with the current state of the resource.
+
+410 The requested resource is no longer available at the server.
+
+412 PRECONDITION FAILED, The 412 error response indicates that the client specified one or more preconditions in its request headers, effectively telling the REST API to carry out its request only if certain conditions were met. A 412 response indicates that those conditions were not met, so instead of carrying out the request, the API sends this status code.
+
+413 REQUEST ENTITY TOO LARGE , in size than the defined limits by the server
+414 REQUEST ENTITY TOO LONG , in length ...
+
+415 UNSUPPORTED MEDIA TYPE , For example, the client uploads an image as image/svg+xml, but the server requires that images use a different format.
+
+429 TOO MANY REQUESTS
+
+
+5xx ----- Server Error
+
+
+500 INTERNAL SERVER ERROR, A 500 error is never the client’s fault, and therefore, it is reasonable for the client to retry the same request that triggered this response and hope to get a different response. The API response is the generic error message, given when an unexpected condition was encountered and no more specific message is suitable.
+
+501 NOT IMPLEMENTED , The server either does not recognize the request method, or it cannot fulfill the request. Usually, this implies future availability (e.g., a new feature of a web-service API).
+
+502 BAD GATEWAY, The server got an invalid response while working as a gateway to get the response needed to handle the request.
+
+503 SERVICE UNAVAILABLE, the server is not ready to handle the request.
+
+504 GATEWAY TIMEOUT, The server is acting as a gateway and cannot get a response in time for a request.
+
+505 HTTP VERSION NOT SUPPORTED , The HTTP version used in the request is not supported by the server.
+
+507 INSUFFICIENT STORAGE , The method could not be performed on the resource because the server is unable to store the representation needed to successfully complete the request.
+
+508 LOOP DETECTED , The server detected an infinite loop while processing the request.
+
+511 NETWORK AUTHENTICATION REQUIRED, Indicates that the client needs to authenticate to gain network access.
